@@ -1,0 +1,428 @@
+/* Turn on the border-box model for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: #082B59;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    line-height: 2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+header {
+    border-bottom: 10px solid #d98555;
+}
+
+/* navbar styling */
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+nav li {
+    margin: 0 1rem 1rem 1rem;
+    font-size: 1.3rem;
+}
+
+/* max width on the image in pixels */
+nav .logo img {
+    max-width: 150px;
+}
+
+/* flex basis on the image container, li */
+nav .logo {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover {
+    color: #d98555;
+}
+
+/* Styles for About Page */
+
+/* establishes a white background */
+.main-bkgd {
+    background: #ffffff url(https://assets.codepen.io/6306176/gulp-bean-bkgd.jpg) repeat-x bottom;
+    padding-bottom: 300px;
+}
+
+/* sits inside of the white background, centered */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+/* make images flexible */
+
+.about-image {
+    margin-top: 4rem;
+    flex-basis: 50%;
+    align-self: center;
+    max-width: 100%;
+}
+
+picture img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+a {
+    color: #59331d;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.about-copy {
+    font-size: 16px;
+}
+
+article {
+    flex-basis: 73%;
+}
+
+.button {
+    display: inline-block;
+    background-color: #59331D;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    color: #f2f2f2;
+    text-decoration: none;
+    border: 3px solid #59331d;
+}
+
+.button:hover {
+    background-color: #f2f2f2;
+    color: #59331d;
+}
+
+footer {
+    color: #f2f2f2;
+    text-align: center;
+    border-top: 10px solid #d98555;
+}
+
+.disclaimer {
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+footer i {
+    color: #f2f2f2;
+    display: block;
+    font-size: 2rem;
+    margin: 0 1rem 3rem 1rem;
+}
+
+/* End Styles for About Page */
+
+/* Styles for Products Page */
+
+.product-image {
+    max-width: 100%;
+    width: 90%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+
+}
+
+.products {
+    display: grid;
+    grid-template-rows: 10%;
+    margin: auto;
+    padding: 2rem;
+
+}
+
+.product-copy {
+    padding-bottom: 20px;
+}
+
+/* End Styles for Products Page */
+
+
+/* Styles for Contact Page */
+
+.contactInfo ul {
+    list-style: none;
+}
+
+.contact {
+    display: grid;
+    grid-template-rows: 100px 200px 400px;
+    grid-template-areas:
+        "contactTitle"
+        "contactInfo"
+        "contactImage"
+}
+
+.contactTitle {
+    grid-area: contactTitle;
+    justify-content: start;
+    margin: auto 40px;
+}
+
+.contactInfo {
+    grid-area: contactInfo;
+    justify-content: start;
+}
+
+.contactImage img {
+    grid-area: contactImage;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    width: 400px;
+    border-radius: 10px;
+    flex-basis: 25%
+}
+
+/* End Styles for Contact Page */
+
+
+/* Media Queries */
+
+/* Styles for screens larger than or equal to 768px (tablet size) */
+
+@media (min-width: 768px) {
+
+    /* navbar styling */
+    nav ul {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    /* about us styling */
+    .main {
+        flex-flow: row;
+    }
+
+    .about-copy {
+        padding-right: 50px;
+    }
+
+    /* product page styling */
+    .products {
+        display: grid;
+        justify-content: start;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .4fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "title title"
+            "image1 text1"
+            "image2 text2"
+            "image3 text3"
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .image1 {
+        grid-area: image1;
+    }
+
+    .text1 {
+        grid-area: text1;
+    }
+
+    .image2 {
+        grid-area: image2;
+    }
+
+    .text2 {
+        grid-area: text2;
+    }
+
+    .image3 {
+        grid-area: image3;
+    }
+
+    .text3 {
+        grid-area: text3;
+    }
+
+    /* contact page styling */
+
+    .contact {
+        display: grid;
+        padding-right: 40px;
+        padding-bottom: 50px;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "contactTitle contactImage"
+            "contactInfo contactInfo"
+    }
+
+    .contactTitle {
+        grid-area: contactTitle;
+        margin: auto 40px;
+    }
+
+    .contactImage img {
+        grid-area: contactImage;
+        margin: 40px auto;
+        display: block;
+        max-width: 100%;
+        width: 400px;
+        border-radius: 10px;
+        flex-basis: 25%
+    }
+
+    /* End contact page styling */
+
+}
+
+/* Styles for screens larger than or equal to 1000px (desktop size) */
+
+@media (min-width: 1000px) {
+
+    /* navbar styling */
+    nav ul {
+        padding-right: 50px;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: right;
+    }
+
+    nav li {
+        margin: 0 1rem 1rem 1rem;
+        font-size: 1.3rem;
+    }
+
+    nav .logo {
+        flex-basis: 100%;
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    /* about us styling */
+    .main {
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    /* product page styling */
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: .5fr 1.25fr 1.25fr;
+        grid-template-areas:
+            "title title title"
+            "image1 text1 image2"
+            "text2 image3 text3"
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .image1 {
+        grid-area: image1;
+    }
+
+    .text1 {
+        grid-area: text1;
+    }
+
+    .image2 {
+        grid-area: image2;
+    }
+
+    .text2 {
+        grid-area: text2;
+    }
+
+    .image3 {
+        grid-area: image3;
+    }
+
+    .text3 {
+        grid-area: text3;
+    }
+
+    /* contact page styling */
+
+    .contact {
+        display: grid;
+        padding-bottom: 50px;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "contactTitle contactImage"
+            "contactInfo contactInfo"
+    }
+
+    .contactTitle {
+        grid-area: contactTitle;
+        margin: auto 40px;
+    }
+
+    .contactImage img {
+        grid-area: contactImage;
+        margin: 40px auto;
+        display: block;
+        max-width: 100%;
+        width: 400px;
+        border-radius: 10px;
+        flex-basis: 25%
+    }
+
+    /* End contact page styling */
+}
